@@ -1,0 +1,31 @@
+<section class="hero-grid_cards">
+    <!-- <h1><%= title %></h1> -->
+    <div class="cards-container">
+        <div class="left">
+            <% articles.slice(0, 1).forEach(function(article) { %>
+                <a href="/content/<%= article.type%>/<%= article.id %>" class="card">
+                    <% if (article.imageBase64) { %>
+                        <img src="data:<%= article.imageMimeType %>;base64,<%= article.imageBase64 %>" alt="<%= article.title %>">
+                    <% } else { %>
+                        <img src="/path/to/default/image.png" alt="<%= article.title %>">
+                    <% } %>
+                    <div class="title"><%= article.title %></div>
+                    <p class="content"><%= article.content %></p>
+                </a>
+            <% }); %>
+        </div>
+        <div class="right">
+            <% articles.slice(1).forEach(function(article) { %>
+                <a href="/content/<%= article.type%>/<%= article.id %>" class="card">
+                    <% if (article.imageBase64) { %>
+                        <img src="data:<%= article.imageMimeType %>;base64,<%= article.imageBase64 %>" alt="<%= article.title %>">
+                    <% } else { %>
+                        <img src="/path/to/default/image.png" alt="<%= article.title %>">
+                    <% } %>
+                    <div class="title"><%= article.title %></div>
+                    <p class="content"><%= article.content %></p>
+                </a>
+            <% }); %>
+        </div>
+    </div>
+</section>
