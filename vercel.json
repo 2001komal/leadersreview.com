@@ -14,8 +14,11 @@
     ],
     "functions": {
       "server.js": {
-        "includeFiles": ["views/**", "public/**"]
+        "includeFiles": "views/**"
       }
+    },
+    "static": {
+      "public": "public"
     }
   }
   
