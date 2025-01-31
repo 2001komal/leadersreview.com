@@ -3,6 +3,7 @@ const Blog = require('../models/blog');
 const Press = require('../models/press');
 const Solution = require('../models/solution');
 const Leader = require('../models/leader');
+const Magazine = require('../models/magazine');
 
 const getModelForType = (type) => {
   switch (type) {
@@ -11,6 +12,7 @@ const getModelForType = (type) => {
     case 'News': return News;
     case 'Press': return Press;
     case 'Leader': return Leader;
+    case 'Magazine': return Magazine;
     default: return Blog;
   }
 };

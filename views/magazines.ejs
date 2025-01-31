@@ -1,16 +1,20 @@
 <section class="magazines-container">
     <div class="left">
-       <h1>Latest Magazine</h1>
-       <p>Don't Miss And Stay Up-to-date</p>
-       <button>View All Magazines</button>
+        <h1>Latest Magazine</h1>
+        <p>Don't Miss And Stay Up-to-date</p>
+        <button>View All Magazines</button>
     </div>
     <div class="image-slider right">
         <% articles.forEach(function(magazine) { %>
-        <a class="card" href="/magazines/<%= magazine.id %>">
+        <a class="card" href="/content/Magazine/<%= magazine.id %>">
+            <% if (magazine.imageBase64) { %>
+                <img src="data:<%= magazine.imageMimeType %>;base64,<%= magazine.imageBase64 %>" alt="<%= magazine.title %>">
+            <% } else { %>
+                <!-- In case the image is stored as a file path -->
                 <img src="<%= magazine.image %>" alt="<%= magazine.title %>">
-                <div class="title"><%= magazine.title %></div>
+            <% } %>
+            <div class="title"><%= magazine.title %></div>
         </a>
         <% }); %>
     </div>
 </section>
-
