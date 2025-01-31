@@ -16,9 +16,6 @@
       "server.js": {
         "includeFiles": "views/**"
       }
-    },
-    "static": {
-      "public": "public"
     }
   }
   
